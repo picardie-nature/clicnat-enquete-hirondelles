@@ -1,0 +1,32 @@
+html {
+	background: url('images/bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	background-color: transparent;
+}
+
+.fond-blanc-60p {
+	background-color: rgba(255,255,255,0.6);
+}
+
+.fond-blanc {
+	background-color: white;
+}
+
+.boite-accueil {
+	min-height: 200px;
+	padding-top: 30px;
+}
+
+.spinner {
+	width: 80% !important;
+}
+
+.spinner_citation {
+	width: 4em !important;
+}
