@@ -118,7 +118,7 @@ class Hirondelles extends clicnat_smarty {
 							$citation->ajoute_tag(70); // mort
 						}
 						$citation->set_effectif($nb);
-						$citation->ajoute_tag(CLICNAT_HIRONDELLE_TAG, $this->id_visite, "visite_espace_hirondelle.id_visite");
+						$citation->ajoute_tag(CLICNAT_HIRONDELLE_TAG, $visite->id_visite_nid, "visite_espace_hirondelle.id_visite");
 					}
 				}
 			}
