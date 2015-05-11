@@ -290,6 +290,8 @@ function init_choix_colonie(env) {
 			},
 			success: function (data,text,xhr) {
 				$('#id_visite_nid').val("");
+				alert("Observations enregistrées");
+				$('#modal_citations_visite').modal('hide');
 			}
 		});
 		return false;

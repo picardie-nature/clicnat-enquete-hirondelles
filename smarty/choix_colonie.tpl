@@ -126,14 +126,14 @@
 									</tr>
 									<tr>
 										<th></th>
-										<th>vide</th>
 										<th>occupé</th>
+										<th>vide</th>
 										<th>détruit</th>
-										<th>vide</th>
 										<th>occupé</th>
+										<th>vide</th>
 										<th>détruit</th>
-										<th>vide</th>
 										<th>occupé</th>
+										<th>vide</th>
 										<th>détruit</th>
 									</tr>
 								</thead>
