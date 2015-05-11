@@ -10,7 +10,7 @@
 			<div class="modal-body">
 				<div class="container-fluid">
 					<form method="post" action="index.php?t=creer_citations_visite" id="ccv">
-						<input type="text" name="id_visite_nid" id="id_visite_nid" value=""/>
+						<input type="hidden" name="id_visite_nid" id="id_visite_nid" value=""/>
 						{include file="_citation_visite.tpl" espece="fenetre" espece_titre="Hirondelle de fenêtre"}
 						{include file="_citation_visite.tpl" espece="rustique" espece_titre="Hirondelle rustique"}
 						{include file="_citation_visite.tpl" espece="rivage" espece_titre="Hirondelle rustique"}
@@ -113,6 +113,34 @@
 							</div>
 						</div>
 					</form>
+					<div class="row">
+						<div class="col-md-12">
+							<h3>Historique des visites</h3>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Date</th>
+										<th colspan="3">Nids d'hirondelles Rustique</th>
+										<th colspan="3">Nids d'hirondelles de Fenêtre</th>
+										<th colspan="3">Nids d'hirondelles de Rivage</th>
+									</tr>
+									<tr>
+										<th></th>
+										<th>vide</th>
+										<th>occupé</th>
+										<th>détruit</th>
+										<th>vide</th>
+										<th>occupé</th>
+										<th>détruit</th>
+										<th>vide</th>
+										<th>occupé</th>
+										<th>détruit</th>
+									</tr>
+								</thead>
+								<tbody id="historique"></tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">

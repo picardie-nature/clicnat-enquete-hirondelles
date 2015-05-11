@@ -148,10 +148,43 @@ function init_choix_colonie(env) {
 				$('#datepicker').datepicker({maxDate: "+0D"});
 				$('#modal_nouvelle_visite').modal();
 				var spinners = $('.spinner');
+				// remise a zéro des spinners
 				for (var i=0; i<spinners.length; i++) {
 					$(spinners[i]).spinner({min:0,max:100});
 					$(spinners[i]).spinner("value",0);
 				}
+				// reprise de la dernière visite et affichage historique
+				$.ajax({
+					url: '?t=colonie_details&id='+features[0].get('id_espace'),
+					success: function (data,txtStatus,xhr) {
+						if (data.visites.length >= 1) {
+							// reprise
+							var derniere_visite = data.visites[data.visites.length-1];
+							var spinners = $('.spinner');
+							for (var i=0; i<spinners.length; i++) {
+								var name = $(spinners[i]).attr('name');
+								$(spinners[i]).spinner("value", derniere_visite[name]);
+							}
+							// historique
+							$('#historique').html("");
+							for (var i=data.visites.length-1; i>=0 ; i--) {
+								var v = data.visites[i];
+								var tr = "<tr><td>"+v['date_visite_nid']+"</td>";
+								tr += "<td>"+v['n_nid_occupe_r']+"</td>";
+								tr += "<td>"+v['n_nid_vide_r']+"</td>";
+								tr += "<td>"+v['n_nid_detruit_r']+"</td>";
+								tr += "<td>"+v['n_nid_occupe_f']+"</td>";
+								tr += "<td>"+v['n_nid_vide_f']+"</td>";
+								tr += "<td>"+v['n_nid_detruit_f']+"</td>";
+								tr += "<td>"+v['n_nid_occupe_ri']+"</td>";
+								tr += "<td>"+v['n_nid_vide_ri']+"</td>";
+								tr += "<td>"+v['n_nid_detruit_ri']+"</td>";
+								tr += "</tr>";
+								$('#historique').append(tr);
+							}
+						}
+					}
+				});
 			}
 		}
 		// deselect
@@ -238,6 +271,7 @@ function init_choix_colonie(env) {
 				alert('erreur pendant le transfert');
 			},
 			success: function (data,text,xhr) {
+				$('#id_visite_nid').val("");
 			}
 		});
 		return false;
@@ -256,8 +290,10 @@ function init_choix_colonie(env) {
 	// corrige un bug où la scrollbar n'était plus présente
 	// après quand on enchaine avec la saisie des citations
 	$('#modal_nouvelle_visite').on('hidden.bs.modal', function (e) {
-			$('#modal_citations_visite').modal();
-			$('body').addClass('modal-open');
+			if ($('#id_visite_nid').val() > 0) {
+				$('#modal_citations_visite').modal();
+				$('body').addClass('modal-open');
+			}
 	});
 }
 

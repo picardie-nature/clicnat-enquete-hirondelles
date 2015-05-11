@@ -30,3 +30,7 @@ body {
 .spinner_citation {
 	width: 4em !important;
 }
+
+textarea {
+	width: 100%;
+}

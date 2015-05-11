@@ -41,6 +41,34 @@ class Hirondelles extends clicnat_smarty {
 		return isset($_GET['t'])?trim($_GET['t']):'accueil';
 	}
 
+	public function before_colonie_details() {
+		$colonie = new clicnat_espace_hirondelle($this->db, (int)$_GET['id']);
+		$ret = [
+			"id_colonie" => $colonie->id_espace,
+			"id_utilisateur" => $colonie->id_utilisateur,
+			"visites" => array()
+		];
+		$p = 0;
+		foreach ($colonie->visites() as $visite) {
+			$ret['visites'][] = [
+				'date_visite_nid' => $visite->date_visite_nid,
+				'n_nid_occupe_r' => $visite->n_nid_occupe_r,
+				'n_nid_vide_r' => $visite->n_nid_vide_r,
+				'n_nid_detruit_r' => $visite->n_nid_detruit_r,
+				'n_nid_occupe_ri' => $visite->n_nid_occupe_ri,
+				'n_nid_vide_ri' => $visite->n_nid_vide_ri,
+				'n_nid_detruit_ri' => $visite->n_nid_detruit_ri,
+				'n_nid_occupe_f' => $visite->n_nid_occupe_f,
+				'n_nid_vide_f' => $visite->n_nid_vide_f,
+				'n_nid_detruit_f' => $visite->n_nid_detruit_f,
+				'id_visite_nid' => $visite->id_visite_nid
+			];
+		}
+		$this->header_json();
+		echo json_encode($ret);
+		exit(0);
+	}
+
 	public function before_creer_citations_visite() {
 		$this->header_json();
 		$retour = [
