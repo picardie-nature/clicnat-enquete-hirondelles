@@ -237,6 +237,24 @@ function init_choix_colonie(env) {
 		}
 	});
 
+	$('#dnp').submit(function () { // création nouvelle colonie
+		$.ajax({
+			url: $(this).attr('action'),
+			method: 'POST',
+			data: $(this).serialize(),
+			error: function (xhr,text,error) {
+				alert('erreur lors de la création de la colonie');
+			},
+			success: function (data,text,xhr) {
+				if (data.etat == 'ok') {
+					$('#modal_nouveau_point').modal('hide');
+					gbl_nouveau.raffraichir_couche_colonies();
+				}
+			}
+		});
+		return false;
+	})
+
 	$('#dnv').submit(function () { // enregistre nouvelle visite
 		$('#date_visite_nid').val($('#datepicker').datepicker("getDate").toDate());
 		$.ajax({

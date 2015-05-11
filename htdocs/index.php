@@ -192,11 +192,11 @@ class Hirondelles extends clicnat_smarty {
 	public function before_creer_point() {
 		$this->header_json();
 		try {
-			if (empty($_GET['x']) || empty($_GET['y']))
+			if (empty($_POST['x']) || empty($_POST['y']))
 				throw new Exception("pas de coordonnées x,y");
 			$point = [
-				'x' => $_GET['x'],
-				'y' => $_GET['y'],
+				'x' => $_POST['x'],
+				'y' => $_POST['y'],
 				'nom' => '',
 				'reference' => '',
 				'id_utilisateur' => $_SESSION['id_utilisateur']
@@ -205,11 +205,11 @@ class Hirondelles extends clicnat_smarty {
 			$point = new clicnat_espace_hirondelle($this->db, $id_espace);
 			$point->ajoute_tag(CLICNAT_HIRONDELLE_TAG);
 
-			if (isset($_GET['occupant'])) {
+			if (isset($_POST['occupant'])) {
 				$point->ajoute_tag(CLICNAT_HIRONDELLE_ID_TAG_OCCUPANT);
 			}
 
-			if (isset($_GET['publique'])) {
+			if (isset($_POST['publique'])) {
 				$point->ajoute_tag(CLICNAT_HIRONDELLE_ID_TAG_PUBLIQUE);
 			}
 			echo json_encode(["etat" => "ok", "id_espace" => $id_espace]);

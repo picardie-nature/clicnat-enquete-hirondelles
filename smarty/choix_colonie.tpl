@@ -156,8 +156,7 @@
 				<h4 class="modal-title">Enregister une colonie d'hirondelles</h4>
 			</div>
 			<div class="modal-body">
-				<form id="dnp" method="get" action="index.php">
-					<input type="hidden" name="t" value="creer_point">
+				<form id="dnp" method="post" action="index.php?t=creer_point">
 					<input type="hidden" name="x" value="" id="creer_point_x">
 					<input type="hidden" name="y" value="" id="creer_point_y">
 					<div class="form-group">
