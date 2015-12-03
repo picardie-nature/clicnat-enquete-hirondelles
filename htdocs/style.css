@@ -1,36 +1,730 @@
-html {
-	background: url('images/bg.jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
+/* hauteur du menu                     */
+/* hauteur du corps principal          */
+html,
 body {
-	background-color: transparent;
+  height: 100%;
+  position:relative;
+  overflow-x:hidden;
 }
+.fond-accueil{
+  position:fixed;
+  left:0;
+  width:66%;
+  background-image: url('images/fond_accueil.jpg');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: center center;
+/*  background-position: 0px  66% ; 
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+html.carte_nids, html.choix_colonie{
+  background: url('images/fond_carte.jpg') no-repeat fixed 0px  -10px / cover;
+}
+body {
+  background-color: transparent;
+  display: block !important;
+  position: relative;
+  text-shadow: 2px 2px 8px white;
+}
+h1 {
+  margin-top:0;
+  font-weight:bold;
+  font-size : 30px;
+  text-shadow : 2px 2px 8px rgba(215,180,125,0.3), -2px -2px 1px rgba(180,125,45,0.4);
+  text-decoration : underline;
+}
+h2,h3,h4{
+  text-shadow: 2px 2px 8px #cccccc , -2px -2px 1px rgba(180,125,45,0.3);	
+}
+.main {
+  position:relative;
+  background-color: transparent;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  min-height:90%;
+ /* overflow-y:scroll; */
+ /* max-height:calc(95% - 40px);*/
 
+}
+/* legende du background */
+/*
+html.accueil .main:after{
+	content:"Gauche : Les Hirondelles rustique © R. LeCourtois & B. Hanniquet  \A Droite : Les Hirondelles de fenêtres © R. Le Courtois & J.L. Hercent";
+	white-space:pre;
+	background-color:rgba(220,220,220,0.3);
+	position:fixed;
+	bottom:170px;
+}
+*/
+.entete{
+	position: fixed;
+	/*height : 80px;*/
+	z-index : 1000;
+	width:100%;
+}
+.row-contenu-first{
+/*	margin-top :80px;*/
+}
+.pied_page{
+  position: fixed;
+  bottom:0;
+  box-sizing:border-box;
+  padding-bottom:10px;
+  padding-top:10px;
+  z-index:10;
+  min-height:5%;
+}
+.txt_footer{
+	font-weight:bold;
+}
+.marg-top-10px{
+	margin-top:10px;
+}
+.bor-black-4px {
+  border: 4px ridge #000000;
+  border-left: 3px #cccccc;
+  border-top: 3px #cccccc;
+}
+.bor-black-6px {
+  border: 6px ridge #000000;
+  border-left: 5px #cccccc;
+  border-top: 5px #cccccc;
+}
+.bor-colfond-3px {
+  border: 3px ridge #ffffff;
+  border-left: 2px #ffffff;
+  border-top: 2px #ffffff;
+}
+.shadow-3px-black {
+  box-shadow: 2px 2px 3px #000000, inset 3px 3px 2px #cccccc !important;
+}
+.shadow-5px-black {
+  box-shadow: 4px 4px 5px #e6e6e6, inset 5px 5px 4px #ffffff !important;
+}
+.pad-0px {
+  padding: 0px;
+}
+.pad-5px{
+  padding: 5px;
+}
+.pad-10px {
+  padding: 10px;
+}
+.pad-12px {
+  padding: 12px;
+}
+.pad-15px {
+  padding: 15px;
+}
+.pad-lr-0px {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.pad-lr-10px {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pad-lr-12px {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.pad-lr-15px {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* menu */
+/*div.mini-menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  margin: 0 0 10px ;
+  border: 0px;
+}
+*/
+.mini-menu {
+  padding-top: 10px;
+  margin-top : 10px;
+  background-color: transparent ;
+  z-index:10;
+}
+.mini-menu img {
+  height: 100%;
+  float: left;
+}
+.mini-menu > a {
+  display: block;
+  height: 100%;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #808080;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.5s, font-size 1s, font-weight 1s;
+}
+.mini-menu > a:hover,
+a.menu-actif {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 18px;
+}
+h1{
+  text-align:center;
+  border-radius:5px;
+}
+.deconnection {
+  height: 100%;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #808080;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.deconnection p {
+  display: inline;
+}
+.deconnection a:hover {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.mini-menu img {
+  height: 100%;
+  float: left;
+}
+.mini-menu > a {
+  display: block;
+  height: 100%;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #808080;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+#indicateur_chargement {
+  width: 200px;
+  margin-top: 20px;
+  left: 20%;
+  z-index: 2000;
+  font-size: 15px;
+  text-align: center;
+}
+.progress-bar{
+	height:20px;
+}
 .fond-blanc-60p {
-	background-color: rgba(255,255,255,0.6);
+        background-color: rgba(255,255,255,0.6);
 }
+.fond-blanc-80p {
+        background-color: rgba(255,255,255,0.8);
+}
+#map, #auto_commune{
+	border-radius: 5px;
+	box-shadow: 4px 4px 5px #e6e6e6, inset 5px 5px 4px #ffffff !important;
+	margin-top:10px;
+	border: 1px groove #cccccc;
 
+}
 .fond-blanc {
-	background-color: white;
+        background-color: white;
 }
 
 .boite-accueil {
-	min-height: 200px;
-	padding-top: 30px;
+       /* min-height: 200px;*/
+	border-radius: 5px;
+	padding-bottom: 10px;
+	padding-top:10px;
+	box-shadow: 4px 4px 5px #e6e6e6, inset 5px 5px 4px #ffffff !important;
+	margin-top:10px;
+}
+html:not(.accueil) .boite-accueil{
+	margin-left:-6px;
+	margin-right:6px;
+}
+.boite-accueil h2 {	
+	text-align: center;
+	font-weight:bolder;
+}
+.boite-accueil p{
+	text-align: left;
+	text-indent: 10px;
+}
+.boite-accueil ul{
+
+}
+.boite-accueil ul li{
+	text-align:left;
+	text-indent:5px;
+}
+.boite-accueil ul li:not(:first-child){
+	text-align:left;
+	margin-top : 0.5em;
+}
+.boite-accueil p{
+	text-align:justify;
+	margin-top:10px;
 }
 
 .spinner {
-	width: 80% !important;
+        width: 80% !important;
 }
 
 .spinner_citation {
-	width: 4em !important;
+        width: 4em !important;
 }
 
 textarea {
+        width: 100%;
+}
+
+.mention{
+  float:right;
+}
+.compte_colonie{
+  text-align: center;
+  font-weight: bolder ;
+  font-size: 1.2em;
+  padding:10px 0 20px 0 ;
+  margin-left:0;
+  margin-right:0;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px #e6e6e6, inset 5px 5px 4px #ffffff !important;
+}
+.compte_colonie p{
+	width: 80%;
+	margin: 10px 10%;
+	color: black;
+}
+.boite-image-row{
+	margin-bottom:60px;
+	margin-top:50px;
+	padding-bottom:20px;
+	bottom:0;
+}
+.boite-image{
+	position :relative;
+	border-radius:5px;
+	max-width:250px;
+	margin-bottom:10px;
+	box-sizing:border-box;
+	padding : 10px 20px 10px;
+}
+.boite-image-titre{
+	text-align:center;
+	font-weight:bold;
+	font-size:0.9em;
+
+}
+.boite-image-legende{
+	position:absolute;
+	bottom:0;
+	left:0;
+	border-radius:5px;
+}
+.boite-image p{
+	display: inline;
+	font-size:0.8em;
+}
+.boite-image img{
 	width: 100%;
+	height: 160px;
+	border-radius:5px;
+
+}
+.apercu{
+	
+}
+.detail{
+	display:none;
+	margin-top:20px;
+}
+.row_compte_colonie{
+	padding:20px 0;
+	font-weight:bold;
+	overflow:visible;
+}
+ul.polaroids img{
+    display: block;
+    margin: 9px 9px 51px 9px;
+    width: 200px;
+    height:200px;
+    border: medium none;
+    border-radius:1px
+}
+/*ajout la legende la mise à la ligne et réaliser par le \A 
+ *C'est du advance css ça ;)
+ * */
+ul.polaroids a:after {
+  content: attr(data-espece)"\A"attr(data-nid);
+  white-space: pre-wrap;
+  display:block;
+  font-size:12px;
+  font-family:"Florence","Coronetscript",cursive !important;
+  margin-top:10px;
+
+  margin-left:9px;
+}
+ul.polaroids li{
+   padding-left: 0;
+   display: inline;
+}
+
+
+/* By default, we tilt all our images -2 degrees */
+ul.polaroids a {
+  transform: rotate(-2deg);	
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+    background: #fff none repeat scroll 0 0;
+    color: #333;
+    display: inline;
+    float: left;
+ /*   font-family: "Marker Felt",sans-serif; */
+    font-size: 18px;
+    margin: 0 0 27px 25px;
+    padding: 10px 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    transform: rotate(-2deg);
+    width: auto;
+   /* height:250px;*/
+    border-radius:2px;
+}
+ 
+/* Rotate all even images 2 degrees */
+ul.polaroids li:nth-child(even) a {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  transform: rotate(2deg);
+  
+}
+ 
+/* Don't rotate every third image, but offset its position */
+ul.polaroids li:nth-child(3n) a {
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  position: relative;
+  top: -5px;
+  transform: rotate(-1deg);
+  
+}
+ 
+/* Rotate every fifth image by 5 degrees and offset it */
+ul.polaroids li:nth-child(5n) a {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  transform: rotate(5deg);  
+  position: relative;
+  right: 5px;
+}
+ 
+/* Keep default rotate for every eighth, but offset it */
+ul.polaroids li:nth-child(8n) a {
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
+ 
+/* Keep default rotate for every eleventh, but offset it */
+ul.polaroids li:nth-child(11n) a {
+  position: relative;
+  top: 3px;
+  left: -5px;
+}
+/* Scale the images on hover, add transitions for smoothing things out, and ensure the hover appears on top */
+ul.polaroids a:hover {
+  -webkit-transform: scale(1.33) !important; 
+  -moz-transform: scale(1.33) !important;
+  transform: scale(1.33) !important; 
+  position: relative;
+  z-index: 5;
+  font-family:"Florence","Coronetscript",cursive !important;
+  
+}
+
+/* Add drop shadows and smooth out the transition (Safari only) */
+ul.polaroids a {
+  -webkit-transition: -webkit-transform .15s linear;
+  transition: transform .15s linear;
+    -webkit-box-shadow: 10px 6px 6px rgba(0,0,10,.5), -7px -3px 6px rgba(0,0,10,.5),  5px 5px 4px #ffffff inset;
+  -moz-box-shadow: 10px 6px 6px rgba(0,0,10,.5) , -7px -3px 6px rgba(0,0,10,.5) ,  5px 5px 4px #ffffff inset;
+  box-shadow: 10px 6px 6px rgba(0,0,10,.5) , -7px -3px 6px rgba(0,0,10,.5) ,  5px 5px 4px #ffffff inset;
+
+  
+}
+ 
+/* On hover, darken the shadows a bit */
+ul.polaroids a:hover {
+  -webkit-box-shadow: 20 3px 6px rgba(0,0,0,.5);
+  -moz-box-shadow: 20 3px 6px rgba(0,0,0,.5);
+  box-shadow: 20 3px 6px rgba(0,0,0,.5);
+  
+}
+ul.polaroids .polaroids-copyright{
+	text-align:left;
+	font-family:arial;
+	font-size:8px;
+	margin-top:calc(-51px - 1.5em);
+	margin-left:12px;
+
+}
+ul.polaroids .polaroids-loc{
+	font-family:arial;
+	font-size:10px;
+	text-align:left;
+	margin-left:9px;
+	margin-top:-1em;
+	margin:-1em auto 0.2em 9px;
+
+}
+#historique{
+	max-height:200px;
+	overflow-y:auto;
+	display:block;
+
+}
+
+thead.historique, #historique tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+.modal {
+	box-shadow:inset 3px 3px 2px #cccccc !important;
+	overflow-y:scroll;
+}
+.modal-dialog{
+	box-shadow:inset 3px 3px 2px #cccccc !important;
+	border-radius:5px;
+	border: 1px ridge rgba(230,230,230,0.8) ;
+	border-left: 1px -1px ;
+	border-top: 1px -1px ;
+}
+#modal_chargement .modal-dialog{
+	width:250px;
+}
+// modal visite
+.modal-body{
+	max-height: calc(100% - 210px);
+}
+#modal_nouvelle_visite th,td{
+	text-align:center !important;
+}
+.bord-left{
+	border-left:1px solid grey;
+}
+#modal_nouvelle_visite tr:first-child{
+	text-align:left !important;
+}
+#dnv h4{
+	margin-top:20px;
+	margin-bottom:0;
+}
+
+/*logo accueil */
+#logo_pic_haut{
+	margin-top:-20px;
+	width:92px;
+	height:64px;
+	background-image: url('http://www.picardie-nature.org/pix/logo_top.png');
+	-webkit-background-size: cover;
+ 	 -moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover; */
+
+
+}
+/* bordure de l'historique */
+.bord-left{
+	border-left:1px solid grey;
+}
+
+/* bloc-bas contient tout le footer (ligne, logo fne, liens) */
+DIV#bloc-bas {
+	margin-top: 0px;
+	padding-top: 5px;
+	padding-bottom : 5px;
+}
+#bloc-bas ul{
+	list-style-type : none;
+}
+#logos {
+	text-align: center;
+}
+.logos > div > div{
+	display :inline;
+}
+#logo_cr {
+	max-width: 94px;
+	height: 62px; /*124*/
+	background-image: url('http://www.picardie-nature.org/pix/picto_crp.png');
+}
+
+#logo_europe {
+	width: 94px;
+	height: 62px;
+	background-image: url('http://www.picardie-nature.org/pix/picto_europe.png');
+}
+
+#logo_europe_eng {
+	width: 89px;
+	height: 62px;
+	background-image: url('http://www.picardie-nature.org/pix/picto_europe_eng.png');
+}
+
+#logo_dreal {
+	width: 94px;
+	height: 62px;
+	background-image: url('http://www.picardie-nature.org/pix/picto_minec.png');
+}
+
+#logo_cg02 {
+	width: 94px;
+	height: 62px;
+	background-image: url('http://www.picardie-nature.org/pix/picto_cg02.png');
+}
+
+#logo_cg80 {
+	width: 62px;
+	height: 62px;
+	background-image: url('http://www.picardie-nature.org/pix/picto_cg80.png');
+}
+
+#logo_amiens {
+	width: 94px;
+	height: 62px;
+	background-image: url('http://www.picardie-nature.org/pix/picto_am.png');
+}
+
+.hoverscroll {
+	display:inline-block;
+	background-position: 0% 100%;
+}
+
+.hoverscroll:hover {
+	background-position: 0% 0%;
+}
+
+.directive {margin-bottom: 1px;}
+.valeur {margin-top: 1px;}
+.desc { margin-left: 4px; }
+
+.desc h1 {
+	margin: 0px;
+	background-color: rgb(198,229,72);
+	color: white;
+	font-size: 16px;
+	padding: 4px;
+}
+.desc div {
+	margin: 0px;
+	margin-bottom: 20px;
+	background-color: white;
+	padding: 15px;
+	border-style: solid;
+	border-width: 4px;
+	border-top-style: none;
+	border-color: rgb(198,229,72);
+	font-size: 14px;
+}
+
+.bloc-bas p { 
+	margin-bottom: 0px; 
+}
+
+/* bloc-bas est dÃ©coupÃ© en 4 rondelles */
+/* b-bas-1 : filler */
+DIV#b-bas-1 {
+	position:		relative;
+	height:			43px;
+}
+
+/* b-bas-2 : ligne */
+DIV#b-bas-2 {
+	background:		rgb(198,229,72);
+	height:			4px;
+}
+
+DIV#b-bas-fne {
+	position:		absolute;
+	left:			92px;
+}
+
+DIV#b-bas-eas-cont {
+	position:		relative;
+	top:			35px;
+	text-align:		center;
+}
+SPAN#b-bas-eas {
+	background:		rgb(198,229,72);
+	color:			#FFFFFF;
+	padding-left:		2em;
+	padding-right:		2em;
+	font-weight:		bold;
+}
+
+/* b-bas-3 : liens */
+DIV#b-bas-3 {
+	text-align:		center;
+	margin-top:		0.5em;
+	margin-left:		auto;
+	margin-right:		auto;
+}
+
+DIV#b-bas-3, DIV#b-bas-3 A {
+	color:			rgb(198,229,72);
+}
+
+/* b-bas-4 : coordonnÃ©es */
+DIV#b-bas-4 {
+	text-align:		center;
+	margin:			auto;
+}
+
+/* reponsive  */
+@media only screen and (max-width : 768px) {
+	.mini-menu{
+		margin-top:0;
+		padding-top:0;
+	}
+}
+
+@media only screen and (max-width : 992px) {
+	#bloc-bas{
+		position:relative;
+	}
+	html{
+		background:white;
+	}
+	.main{
+		margin-bottom:0 !important;
+	}
+	#logo_pic_haut{
+		height:48px;
+		width:64px;
+	}
+
+}
+
+@media only screen and (max-width : 1200px) {
+	#bloc-bas{
+		position:relative;
+	}
+	.main{
+		margin-bottom:10px !important;
+	}	
+
 }
