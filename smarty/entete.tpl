@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html {if $page} class="{$page}" {/if} lang="fr">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="{$url_statique}/OpenLayers-3.4.0/css/ol.css">
 		<link rel="stylesheet" href="{$url_statique}/jquery-ui-1.11.4/jquery-ui.css">
 		<link rel="stylesheet" href="style.css">
-		<title>Hirondelles - Clicnat</title>
+		<title>Hirondelles - Clicnat - {$page}</title>
 	</head>
 	<body>
 	{foreach from=$alertes item=alerte}
