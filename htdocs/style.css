@@ -496,7 +496,9 @@ ul.polaroids .polaroids-loc{
 	display:block;
 
 }
-
+#historique tr{
+	text-align:center !important;
+}
 thead.historique, #historique tr {
     display:table;
     width:100%;

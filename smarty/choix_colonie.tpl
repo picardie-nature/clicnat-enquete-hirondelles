@@ -154,9 +154,9 @@
 								<thead class="historique">
 									<tr>
 										<th>Date</th>
-										<th colspan="3">Nids d'hirondelles Rustique</th>
-										<th colspan="3">Nids d'hirondelles de Fenêtre</th>
-										<th colspan="3">Nids d'hirondelles de Rivage</th>
+										<th colspan="4">Nids d'hirondelles Rustique</th>
+										<th colspan="4">Nids d'hirondelles de Fenêtre</th>
+										<th colspan="4">Nids d'hirondelles de Rivage</th>
 									</tr>
 									<tr>
 										<th></th>
