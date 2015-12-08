@@ -1,5 +1,5 @@
 {include file="entete.tpl"}
-<div class="modal fade" id="modal_citations_visite" tabindex="-1" role="dialog" aria-labelledby="modal_label_citations_visite" aria-hidden="true">
+<div class="modal fade" id="modal_citations_visite" tabindex="-1" role="dialog" aria-labelledby="modal_citations_visite" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 </div>
-<div class="modal fade" id="modal_chargement" tabindex="-1" role="dialog" aria-labelledby="modal_chargement_ar" aria-hidden="true">
+<div class="modal fade" id="modal_chargement" tabindex="-1" role="dialog" aria-labelledby="modal_chargement" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -97,7 +97,7 @@
 		<div class="col-md-4 boite-accueil fond-blanc" style="margin-top:50px;">
 			<p> Une, puis deux, puis trois observations transmises... : c'est <b>grâce à vous qu'il est possible de réaliser cette carte</b> : elle évolue au fur et à mesure des informations envoyées. N'hésitez pas à la consulter régulièrement.</p>
 						<p>Chaque point représente une colonie déjà renseignée par un observateur en Picardie.</p>
-			<p>Une colonie possède de 1 à plusieurs dizaines de nids.</p>
+			<p>Une colonie possède de une à plusieurs dizaines de nids.</p>
 			<p>La taille des ronds dépend du nombre de colonies renseignées.</p>
 			<p><b>Zoomez pour visualiser l'emplacement des colonies et les observations</b>.</p>
 			<ul>
@@ -109,10 +109,10 @@
 	<div class="row boite-image-row">
 <ul class="polaroids">
 	<li><a data-espece="Adulte nourrisant ses jeunes Hirondelle rustique en nid naturel" href=""><img data-auteur="C. Derozier" data-loc="La Neuville-Roy (60)" src="images/Hr2.jpg" alt="Hirondelles rustiques Nid naturel" /></a></li>
-			<li><a data-espece="Adultes nourrissant ses jeunes Hirondelle de fênetre en nids naturels" href=""><img data-auteur="M. Doublet" data-loc="Saint Germer La Poterie (60)" src="images/Hdf2.jpg" alt="Hirondelles des fenêtres Nid naturel" /></a></li>
-			<li><a data-espece="Couple d'Hirondelle de rivage au nid naturel"  href=""><img data-auteur="R. LeCourtois-Nivart" data-loc="Grand-Rozoy (02)" src="images/Hrv2.jpg" alt="Hirondelles des rivages Nid naturel" /></a></li>
+			<li><a data-espece="Adultes nourrissant ses jeunes Hirondelle de fênetre en nids naturels" href=""><img data-auteur="M. Doublet" data-loc="Saint Germer La Poterie (60)" src="images/Hdf2.jpg" alt="Hirondelles de fenêtres Nid naturel" /></a></li>
+			<li><a data-espece="Couple d'Hirondelle de rivage au nid naturel"  href=""><img data-auteur="R. LeCourtois-Nivart" data-loc="Grand-Rozoy (02)" src="images/Hrv2.jpg" alt="Hirondelles de rivages Nid naturel" /></a></li>
 			<li><a data-espece="Nichée d'Hirondelle rustique en nid artificiel" href=""><img data-auteur="R. Jabouile" data-loc="Fitz-James (60)" src="images/Hr3.jpg" alt="Hirondelles rustiques Nid artificiel" /></a></li>
-			<li><a data-espece="Adulte nourrisssant une jeune Hirondelle de fenêtre en nid artificiel"  href=""><img data-auteur="J.M. Dupont" data-loc="Villers sur Authie (80)" src="images/Hdf3.jpg" alt="Hirondelles des fenêtres Nid artificiel" /></a></li>
+			<li><a data-espece="Adulte nourrisssant une jeune Hirondelle de fenêtre en nid artificiel"  href=""><img data-auteur="J.M. Dupont" data-loc="Villers sur Authie (80)" src="images/Hdf3.jpg" alt="Hirondelles de fenêtres Nid artificiel" /></a></li>
 		</ul> 
 		</div>
 </div>

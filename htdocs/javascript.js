@@ -269,8 +269,59 @@ function init_choix_colonie(env) {
 			success: function (data,text,xhr) {
 				if (data.etat == 'ok') {
 					gbl_nouveau.raffraichir_couche_colonies();
-					$('#modal_chargement').modal('hide');
+					$('#id_espace_visite_colonie').val(data.id_espace);
+				$('#datepicker').datepicker({maxDate: "+0D"});
+				var spinners = $('.spinner');
+				// remise a zéro des spinners
+				for (var i=0; i<spinners.length; i++) {
+					$(spinners[i]).spinner({min:0,max:100});
+					$(spinners[i]).spinner("value",0);
 				}
+				// reprise de la dernière visite et affichage historique
+				$.ajax({
+					url: '?t=colonie_details&id='+data.id_espace,
+					success: function (data,txtStatus,xhr) {
+						if (data.visites.length >= 1) {
+							// reprise
+							// plus besoin de rependre les données precedantes
+							/*
+							var derniere_visite = data.visites[data.visites.length-1];
+							var spinners = $('.spinner');
+							for (var i=0; i<spinners.length; i++) {
+								var name = $(spinners[i]).attr('name');
+								$(spinners[i]).spinner("value", derniere_visite[name]);
+							}
+							*/
+							// historique
+							$('#historique').html("");
+							for (var i=data.visites.length-1; i>=0 ; i--) {
+								var v = data.visites[i];
+								var tr = "<tr><td>"+v['date_visite_nid']+"</td>";
+								tr += "<td>"+v['n_nid_occupe_r']+"</td>";
+								tr += "<td>"+v['n_nid_vide_r']+"</td>";
+								tr += "<td>"+v['n_nid_detruit_r']+"</td>";
+								tr += "<td>"+v['n_jeunes_r']+"</td>";
+								tr += "<td class=\"bord-left\">"+v['n_nid_occupe_f']+"</td>";
+								tr += "<td>"+v['n_nid_vide_f']+"</td>";
+								tr += "<td>"+v['n_nid_detruit_f']+"</td>";
+								tr += "<td>"+v['n_jeunes_f']+"</td>";
+								tr += "<td class=\"bord-left\">"+v['n_nid_occupe_ri']+"</td>";
+								tr += "<td>"+v['n_nid_vide_ri']+"</td>";
+								tr += "<td>"+v['n_nid_detruit_ri']+"</td>";
+								tr += "<td>"+v['n_jeunes_ri']+"</td>";
+								tr += "</tr>";
+								$('#historique').append(tr);
+							}
+						}else { $('#historique').html("Pas encore renseigné");}
+						$('#nom_commune').html(data.nom_commune);
+					}
+				});
+				if ($('#modal_nouvelle_visite').find('td')){
+					$('#modal_nouvelle_visite').modal({backdrop: 'static'}).show();
+				}
+				}
+					$('#modal_chargement').modal('hide');
+				
 			}
 		});
 		return false;

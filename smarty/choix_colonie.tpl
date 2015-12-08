@@ -1,6 +1,6 @@
 {include file="entete.tpl"}
 {* modal ouverte pour la saisie des citations suite à une visite *}
-<div class="modal fade" id="modal_chargement" tabindex="-1" role="dialog" aria-labelledby="modal_chargement_ar" aria-hidden="true">
+<div class="modal fade" id="modal_chargement" tabindex="-1" role="dialog" aria-labelledby="modal_chargement" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -23,7 +23,7 @@
 		</div>
 	</div>
 </div>
-<div class="modal fade" id="modal_citations_visite" tabindex="-1" role="dialog" aria-labelledby="modal_label_citations_visite" aria-hidden="true">
+<div class="modal fade" id="modal_citations_visite" tabindex="-1" role="dialog" aria-labelledby="modal_citations_visite" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -240,10 +240,10 @@
 				<div class="row boite-image-row">
 				<ul class="polaroids">
 			<li><a data-espece="Couple et jeunes au nid d'Hirondelle rustique en nid naturel"  href=""><img data-auteur="W. Mathot" data-loc="Margny sur matz (60)" src="images/Hr4.jpg" alt="Hirondelles rustiques Nid naturel" /></a></li>
-			<li><a data-espece="Adulte d'Hirondelle de fênetre nourrissant ses jeunes en nid naturel"  href=""><img data-auteur="B. Tondellier" data-loc="Picardie" src="images/Hdf4.jpg" alt="Hirondelles des fenêtres Nid naturel" /></a></li>
-			<li><a data-espece="Couple d'Hirondelle de rivage en nid naturel" href=""><img data-auteur="D. Adam" data-loc="Bourdon (80)" src="images/Hrv4.jpg" alt="Hirondelles des rivages Nid naturel" /></a></li>
+			<li><a data-espece="Adulte d'Hirondelle de fênetre nourrissant ses jeunes en nid naturel"  href=""><img data-auteur="B. Tondellier" data-loc="Picardie" src="images/Hdf4.jpg" alt="Hirondelles de fenêtres Nid naturel" /></a></li>
+			<li><a data-espece="Couple d'Hirondelle de rivage en nid naturel" href=""><img data-auteur="D. Adam" data-loc="Bourdon (80)" src="images/Hrv4.jpg" alt="Hirondelles de rivages Nid naturel" /></a></li>
 			<li><a data-espece="Adulte d'Hirondelle rustique en nid naturel assez atypique" href=""><img data-auteur="P. Gracia" data-loc="Compiègne (60)" src="images/Hr5.jpg" alt="Hirondelles rustiques Nid artificiel" /></a></li>
-			<li><a data-espece="Jeune d'Hirondelle de fênetre en nid arificiel" href=""><img data-auteur="S. Declercq" data-loc="Saint-Valery-sur-Somme (80)" src="images/Hdf5.jpg" alt="Hirondelles des fenêtres Nid artificiel" /></a></li>
+			<li><a data-espece="Jeune d'Hirondelle de fênetre en nid arificiel" href=""><img data-auteur="S. Declercq" data-loc="Saint-Valery-sur-Somme (80)" src="images/Hdf5.jpg" alt="Hirondelles de fenêtres Nid artificiel" /></a></li>
 		</ul>
 		</div>	
 	<!--	<div class="row boite-image-row">
@@ -302,8 +302,8 @@
 			<h3>Que représente la carte ?</h3>
 			<p>Chaque point représente une colonie déjà renseignée par les observateurs en Picardie. Si vous connaissez un nid qui n'est pas indiqué sur la carte, nous vous invitons à le signaler.</p>
 			<h3>Comment partager une observation pour une colonie déjà recensée ?</h3>
-			<p>Une <b>colonie possède de 1 à plusieurs dizaines de nids</b>. Cliquez sur la colonie en question, et remplissez le formulaire qui apparait.</p>
-			<p>Vous n'êtes pas sur de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
+			<p>Une <b>colonie possède de un à plusieurs dizaines de nids</b>. Cliquez sur la colonie en question, et remplissez le formulaire qui apparait.</p>
+			<p>Vous n'êtes pas sûr de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
 			<h3>Comment signaler une nouvelle colonie (un ou pluieurs nids) ?</h3>
 			<ul>
 				<li>Renseignez le nom de la commune concernée dans le bloc texte en haut à gauche, ou zoomez sur la carte à l'aide des boutons « + » et « - ».</li>
@@ -316,12 +316,9 @@
 			<ul>
 			 	<li>Si le comptage des œufs ou des jeunes est impossible (pour l'Hirondelle de fenêtre et l'Hirondelle de rivage surtout), indiquez juste que le nid est occupé sans effectif</li>
 				<li>Si la colonie se situe dans une propriété privée (non visible depuis l'espace public), demandez l'accès au propriétaire</li>
-			 	<li>Ne vous mettez pas en danger pour réaliser un comptage (escabeau, échelle, rebord de fenêtre...) : l'information essentielle de savoir si le nid est occupé par des jeunes.</li>
+			 	<li>Ne vous mettez pas en danger pour réaliser un comptage (escabeau, échelle, rebord de fenêtre...) : l'information essentielle est de savoir si le nid est occupé par des jeunes.</li>
 			</ul>
-
 		</div>
-
 	</div>
-
 </div>
 {include file="pied.tpl"}

@@ -389,7 +389,7 @@ class Hirondelles extends clicnat_smarty {
 			}
 		}
 		$this->assign('txt_footer', 'Cette enquête concerne uniquement les nids d\'hirondelles (utilisés ou non, détruits ou non) : Hirondelle de fenêtre, Hirondelle rustique et Hirondelle de rivage.
-				Pour toute observation en dehors d\'une colonie, reportez-vous au site internet  <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr.');
+				Pour toute observation en dehors d\'une colonie, reportez-vous au site internet  <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a>.');
 
 	}
 
