@@ -9,8 +9,8 @@
 			<ul>
 				<li><a href="http://obs.picardie-nature.org/?page=cn" target="_blank">Charte de l'observateur</a></li>
 				<li><a href="http://obs.picardie-nature.org/?page=ml" target="_blank">Mentions légales</a></li>
-				<li><a href="http://www.picardie-nature.org">Picardie-Nature</a></li>
-				<li><a href="http://www.fne.asso.fr">Membre de FNE</a></li>
+				<li><a href="http://www.picardie-nature.org" target="_blank">Picardie-Nature</a></li>
+				<li><a href="http://www.fne.asso.fr" target="_blank">Membre de FNE</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-1">
@@ -21,7 +21,7 @@
 		<div class="col-sm-4 pied">
 			<p><small><a href="http://www.picardie-nature.org/" target="_blank">Picardie Nature</a> est une association
 			régionale de protection de la Nature et de l'Environnement en Picardie</small></p>
-			<p style="margin-top : -.5em "><em><a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a>: La base de données régionale d'information sur la faune picarde</em></p>
+			<p style="margin-top : -.5em "><em><a href="http://www.clicnat.fr" alt="www.clicnat.fr" target="_blank">www.clicnat.fr</a>: La base de données régionale d'information sur la faune picarde</em></p>
 
 
 		</div>

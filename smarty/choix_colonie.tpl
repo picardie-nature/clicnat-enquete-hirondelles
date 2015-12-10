@@ -303,14 +303,14 @@
 			<p>Chaque point représente une colonie déjà renseignée par les observateurs en Picardie. Si vous connaissez un nid qui n'est pas indiqué sur la carte, nous vous invitons à le signaler.</p>
 			<h3>Comment partager une observation pour une colonie déjà recensée ?</h3>
 			<p>Une <b>colonie possède de un à plusieurs dizaines de nids</b>. Cliquez sur la colonie en question, et remplissez le formulaire qui apparait.</p>
-			<p>Vous n'êtes pas sûr de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
+			<p>Vous n'êtes pas sûr de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr"  target="_blank">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
 			<h3>Comment signaler une nouvelle colonie (un ou pluieurs nids) ?</h3>
 			<ul>
 				<li>Renseignez le nom de la commune concernée dans le bloc texte en haut à gauche, ou zoomez sur la carte à l'aide des boutons « + » et « - ».</li>
 				<li>Localisez le point le plus précisément possible en cliquant sur la carte: à l'angle de deux rues, sur un bâtiment ou une maison en particulier (cela est important pour le suivi et l'historique des nids). Pour cela aidez-vous de la photo aérienne.</li>
 				<li>Renseignez le formulaire qui apparaît.</li>
 			</ul>
-			<p>Vous n'êtes pas sur de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
+			<p>Vous n'êtes pas sur de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr"  target="_blank">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
 			<h3>Vigilances :</h3>
 			<p>Une observation doit se faire dans le respect des animaux et des propriétés privées.</p>
 			<ul>

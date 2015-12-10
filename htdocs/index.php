@@ -385,11 +385,10 @@ class Hirondelles extends clicnat_smarty {
 			}
 			if (isset($_GET['acces'])){
 				if(!$GET['acces'])
-					$this->ajoute_alerte('info', 'Vous devez être connecté pour accéder à cette partie');
+					$this->ajoute_alerte('warning', 'Vous devez être connecté pour accéder à cette partie');
 			}
 		}
-		$this->assign('txt_footer', 'Cette enquête concerne uniquement les nids d\'hirondelles (utilisés ou non, détruits ou non) : Hirondelle de fenêtre, Hirondelle rustique et Hirondelle de rivage.
-				Pour toute observation en dehors d\'une colonie, reportez-vous au site internet  <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a>.');
+		$this->assign('txt_footer', 'Cette enquête concerne uniquement les nids d\'hirondelles (utilisés ou non, détruits ou non) : <a href="http://obs.picardie-nature.org/?page=fiche&id=387" title="fiche espece hirondelle de fenêtre sur picardie-nature.org"  target="_blank"><b>Hirondelle de fenêtre</b></a>, <a href="http://obs.picardie-nature.org/?page=fiche&id=725" title="fiche espece hirondelle rustique sur picardie-nature.org"  target="_blank"><b>Hirondelle rustique</b></a> et <a href="http://obs.picardie-nature.org/?page=fiche&id=815" title="fiche espece hirondelle de rivage sur picardie-nature.org"  target="_blank"><b>Hirondelle de rivage</b></a>. Pour toute observation en dehors d\'une colonie, reportez-vous au site internet  <a href="http://www.clicnat.fr" alt="www.clicnat.fr"  target="_blank">www.clicnat.fr</a>.');
 
 	}
 
@@ -451,14 +450,20 @@ class Hirondelles extends clicnat_smarty {
 			if (!in_array($this->template(), ['accueil','creer_compte','inscription','login','carte_nids','geojson_points','colonie_details'])) {
 				if (!$_SESSION['id_utilisateur']){
 					$this->redirect("?t=accueil&acces=false");
-					$this->ajoute_alerte('Vous devez vous connecter por accéder à cette partie');
+					$this->ajoute_alerte('danger','Vous devez vous connecter por accéder à cette partie');
 				}
 			}
 			if ($_SESSION['id_utilisateur'])
 				$this->assign('utl', get_utilisateur($this->db, $_SESSION['id_utilisateur']));
 			else
 				$this->assign('utl', false);
-
+			//test sur le navigateur
+				if (ereg("MSIE 6.0", $_SERVER["HTTP_USER_AGENT"]) || ereg("MSIE 7.0", $_SERVER["HTTP_USER_AGENT"]) || ereg("MSIE 8.0", $_SERVER["HTTP_USER_AGENT"]) ) //pour détecter si le navigateur est IE6
+				{
+					$this->assign("ie_nav", true );
+					$this->ajoute_alerte('warning','Votre navigateur est obsolète il se peut que certaines informations et/ou fonctionnalités n\' apparaissent ou ne fonctionnent pas: Internet Explorer 8 fin de support le 12/01/2016, Internet Explorer 7 fin de support le 13/07/2010, Internet Explorer 6 fin de support le 13/04/2010.');
+					
+				}
 			$this->$before_func();
 		} else {
 			header("HTTP/1.0 404 Not Found");
@@ -466,7 +471,6 @@ class Hirondelles extends clicnat_smarty {
 		}
 
 		parent::display($this->template().".tpl");
-		///var_dump($_SESSION);
 	}
 
 }
