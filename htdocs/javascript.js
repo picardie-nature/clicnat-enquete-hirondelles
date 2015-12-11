@@ -31,11 +31,25 @@ var gbl_nouveau = {
 
 function init_choix_colonie(env) {
 	var projection = ol.proj.get('EPSG:3857');
+	var styles = [ 'Road', 'Aerial', 'AerialWithLabels', 'collinsBart', 'ordnanceSurvey' ];
+	var bing = new ol.layer.Tile({ 
+		visible: true,
+		preload: Infinity,
+		source: new ol.source.BingMaps({
+			key: 'Ah-gSVhOCszl1-LJ6d1gs11SXprWx2-BM6GUkUiqcDAmRWEgV2tNQ_1a7M2wJ33t',
+			imagerySet: styles[2]
+		})
+	});
 	gbl_nouveau.commune = new ol.layer.Vector({
 		source: new ol.source.Vector({
 			attributions: [new ol.Attribution({html: "Contours des commmunes IGN ROUTE 500"})]
+		}),
+		style: new ol.style.Style({
+			fill: new ol.style.Fill({ color: 'rgba(255, 255, 255, 0.6)' }),
+			stroke: new ol.style.Stroke({ color: '#319FD3', width: 1 }) 
 		})
 	});
+
 	gbl_nouveau.colonies_style_cache = {};
 	gbl_nouveau.colonies_style = function (feature) {
 		var s = undefined;
@@ -84,13 +98,14 @@ function init_choix_colonie(env) {
 		}
 	});
 	var layers = [
-		new ol.layer.Tile({
-			source: new ol.source.TileWMS({
-				attributions: [new ol.Attribution({html:"Fond de carte &copy; OpenStreetMap et ses contributeurs"})],
-				url: 'http://gpic.web-fr.org/mapproxy/service',
-				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
-			})
-		}),
+//		new ol.layer.Tile({
+//			source: new ol.source.TileWMS({
+//				attributions: [new ol.Attribution({html:"Fond de carte &copy; OpenStreetMap et ses contributeurs"})],
+//			url: 'http://gpic.web-fr.org/mapproxy/service',
+//				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
+//			})
+//		}),
+		bing,
 		gbl_nouveau.commune,
 		gbl_nouveau.colonies
 	];
@@ -422,11 +437,25 @@ function init_choix_colonie(env) {
 // initialisation de la page carte des nids
 function init_carte_nids(env){
 	var projection = ol.proj.get('EPSG:3857');
+	var styles = [ 'Road', 'Aerial', 'AerialWithLabels', 'collinsBart', 'ordnanceSurvey' ];
+	var bing = new ol.layer.Tile({ 
+		visible: true,
+		preload: Infinity,
+		source: new ol.source.BingMaps({
+			key: 'Ah-gSVhOCszl1-LJ6d1gs11SXprWx2-BM6GUkUiqcDAmRWEgV2tNQ_1a7M2wJ33t',
+			imagerySet: styles[2]
+		})
+	});
 	gbl_nouveau.commune = new ol.layer.Vector({
 		source: new ol.source.Vector({
 			attributions: [new ol.Attribution({html: "Contours des commmunes IGN ROUTE 500"})]
+		}),
+		style: new ol.style.Style({
+			fill: new ol.style.Fill({ color: 'rgba(255, 255, 255, 0.6)' }),
+			stroke: new ol.style.Stroke({ color: '#319FD3', width: 1 }) 
 		})
 	});
+
 	gbl_nouveau.colonies_style_cache = {};
 	gbl_nouveau.colonies_style = function (feature) {
 		var s = undefined;
@@ -437,7 +466,7 @@ function init_carte_nids(env){
 			if (!s) {
 				s = new ol.style.Style({
 					image: new ol.style.Circle({
-						radius:10+n  ,
+						radius: 10,
 						stroke: new ol.style.Stroke({color: '#fff'}),
 						fill: new ol.style.Fill({color: '#3399CC'})
 					}),
@@ -475,13 +504,14 @@ function init_carte_nids(env){
 		}
 	});
 	var layers = [
-		new ol.layer.Tile({
-			source: new ol.source.TileWMS({
-				attributions: [new ol.Attribution({html:"Fond de carte &copy; OpenStreetMap et ses contributeurs"})],
-				url: 'http://gpic.web-fr.org/mapproxy/service',
-				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
-			})
-		}),
+//		new ol.layer.Tile({
+//			source: new ol.source.TileWMS({
+//				attributions: [new ol.Attribution({html:"Fond de carte &copy; OpenStreetMap et ses contributeurs"})],
+//			url: 'http://gpic.web-fr.org/mapproxy/service',
+//				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
+//			})
+//		}),
+		bing,
 		gbl_nouveau.commune,
 		gbl_nouveau.colonies
 	];
@@ -500,9 +530,7 @@ function init_carte_nids(env){
 			center: ol.proj.transform([2.80151, 49.69606], 'EPSG:4326', 'EPSG:3857'),
 			zoom: 8
 		})
-	});
-
-	var select = new ol.interaction.Select({
+	});	var select = new ol.interaction.Select({
 		layers: [gbl_nouveau.colonies],
 		style: function (feature,resolution) {
 			return [gbl_nouveau.colonies_style(feature)];
