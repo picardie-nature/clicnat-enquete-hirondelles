@@ -79,7 +79,7 @@
 			</ul>
 			<p>D'autre part, les <b>hirondelles sont des oiseaux protégés par la loi</b> du 10 juillet 1976, art. L411-1 et suivants, du code de l'environnement ; toute destruction d’individu ou de nid est interdite sous peine de poursuites judiciaires.</p>
 			<p><b>L'association Picardie Nature</b> agit depuis 1970 pour la <b>protection de la nature et de l'environnement</b> en Picardie.
-			Mutualisant connaissance de la faune sauvage picarde avec expérience juridique pour une meilleure prise en compte de l'environnement, c'est tout naturellement que nous agissons dans des cas de destructions directes pour  informer sur les marches à suivre à respecter. <a href="http://www.picardie-nature.org" alt="www.picardie-nature.org">www.picardie-nature.org</a></p>
+			Mutualisant connaissance de la faune sauvage picarde avec expérience juridique pour une meilleure prise en compte de l'environnement, c'est tout naturellement que nous agissons dans des cas de destructions directes pour  informer sur les marches à suivre à respecter. Rendez-vous sur <a href="http://www.picardie-nature.org" alt="www.picardie-nature.org" target="_blank">www.picardie-nature.org</a></p>
 			<p>Les Hirondelle rustique et hirondelle de fenêtre ont pour particularité de nicher au niveau des maisons, granges, écoles et autres bâtiments de notre quotidien. <b>Chaque picard est donc aux premières loges pour observer le retour de ces oiseaux</b> migrateurs chaque printemps.</p>
 			<p>Parce que <b>l'observation et la protection de la nature est possible par tous</b>, Picardie Nature fait appel aux habitants de la région pour rassembler les informations sur les hirondelles et les protéger ensemble.</p>
 			<p>Si vous constatez une destruction imminente, contactez le 03.62.72.22.59 (tapez 3 comme pour les chauves-souris).</p>
@@ -119,7 +119,7 @@
 		  <li>Agir pour protéger des nids menacés de destruction</li>
 		  <li>Agir pour réhabiliter des nids détruits</li>
 		</ul>
-		<p>Pour accéder à cette partie, il vous sera nécessaire d'avoir un compte (si vous possédez déjà un compte sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr">www.clicnat.fr</a>, il fonctionne également ici).</p>
+		<p>Pour accéder à cette partie, il vous sera nécessaire d'avoir un compte (si vous possédez déjà un compte sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr" target="_blank">www.clicnat.fr</a>, il fonctionne également ici).</p>
 	</div>
 	<a href="#dt_suivi" class="apercu_btn btn btn-success glyphicon glyphicon-plus"></a>
 

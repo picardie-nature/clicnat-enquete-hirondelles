@@ -23,6 +23,26 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="modal_succes" tabindex="-1" role="dialog" aria-labelledby="modal_succes" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Observations enregistrées</h4>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid" style="text-align:justify;">
+					<p><b>Merci, vos observations sont bien enregistrées.</b></p>
+					<p>Retrouvez l'historique complet en cliquant à nouveau sur ce point.</p>
+					<p>Nous avons surtout besoin de vos observations aux moments clefs de la vie de la colonnie : <em>arrivée et départ des oiseaux, naissances et envol des jeunes...</em></p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-accesskey="n"  class="close btn btn-danger" data-dismiss="modal" aria-label="Close">Fermer</button>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="modal fade" id="modal_citations_visite" tabindex="-1" role="dialog" aria-labelledby="modal_citations_visite" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -234,7 +254,7 @@
 			<div id="map" style="width:100%; height: 400px;" class="fond-blanc-60p marg-top-10px"></div>
 			<div class="row compte_colonie fond-blanc">
 				<h3>Depuis juin 2015, {$nb_colonies}  colonies ont été enregistrées par {$nb_observateurs} observateurs</h3>
-				<p>Le dernier enregistrement de colonies date du {$derniere_date}</p>
+				<p>Le dernier enregistrement de colonies date du {$derniere_date}</p>
 
 			</div>
 				<div class="row boite-image-row">
@@ -299,26 +319,27 @@
 
 		</div>
 		<div class="col-md-4 boite-accueil fond-blanc">
-			<h3>Que représente la carte ?</h3>
+			<h3>Que représente la carte ?</h3>
 			<p>Chaque point représente une colonie déjà renseignée par les observateurs en Picardie. Si vous connaissez un nid qui n'est pas indiqué sur la carte, nous vous invitons à le signaler.</p>
-			<h3>Comment partager une observation pour une colonie déjà recensée ?</h3>
+			<h3>Comment partager une observation pour une colonie déjà recensée ?</h3>
 			<p>Une <b>colonie possède de un à plusieurs dizaines de nids</b>. Cliquez sur la colonie en question, et remplissez le formulaire qui apparait.</p>
 			<p>Vous n'êtes pas sûr de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr"  target="_blank">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
 			<h3>Comment signaler une nouvelle colonie (un ou pluieurs nids) ?</h3>
 			<ul>
-				<li>Renseignez le nom de la commune concernée dans le bloc texte en haut à gauche, ou zoomez sur la carte à l'aide des boutons « + » et « - ».</li>
+				<li>Renseignez le nom de la commune concernée dans le bloc texte en haut à gauche, ou zoomez sur la carte à l'aide des boutons « + » et « - ».</li>
 				<li>Localisez le point le plus précisément possible en cliquant sur la carte: à l'angle de deux rues, sur un bâtiment ou une maison en particulier (cela est important pour le suivi et l'historique des nids). Pour cela aidez-vous de la photo aérienne.</li>
 				<li>Renseignez le formulaire qui apparaît.</li>
 			</ul>
 			<p>Vous n'êtes pas sur de l'espèce d'hirondelle concernée, rendez-vous sur <a href="http://www.clicnat.fr" alt="www.clicnat.fr"  target="_blank">www.clicnat.fr</a> pour mieux les connaître et les distinguer.</p>
-			<h3>Vigilances :</h3>
+			<h3>Vigilances :</h3>
 			<p>Une observation doit se faire dans le respect des animaux et des propriétés privées.</p>
 			<ul>
 			 	<li>Si le comptage des œufs ou des jeunes est impossible (pour l'Hirondelle de fenêtre et l'Hirondelle de rivage surtout), indiquez juste que le nid est occupé sans effectif</li>
 				<li>Si la colonie se situe dans une propriété privée (non visible depuis l'espace public), demandez l'accès au propriétaire</li>
-			 	<li>Ne vous mettez pas en danger pour réaliser un comptage (escabeau, échelle, rebord de fenêtre...) : l'information essentielle est de savoir si le nid est occupé par des jeunes.</li>
+			 	<li>Ne vous mettez pas en danger pour réaliser un comptage (escabeau, échelle, rebord de fenêtre...) : l'information essentielle est de savoir si le nid est occupé par des jeunes.</li>
 			</ul>
 		</div>
 	</div>
 </div>
 {include file="pied.tpl"}
+

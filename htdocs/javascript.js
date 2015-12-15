@@ -407,6 +407,7 @@ function init_choix_colonie(env) {
 			success: function (data,text,xhr) {
 				$('#id_visite_nid').val("").attr('data-occupes',"");
 				$('#modal_citations_visite').modal('hide');
+				$('#modal_succes').modal().show();
 			}
 		});
 		return false;
@@ -414,10 +415,51 @@ function init_choix_colonie(env) {
 
 	// initialisation du formulaire des citations
 	$('#modal_citations_visite').on('show.bs.modal', function (e) {
-		$('.spinner_citation').spinner({min:0,max:100}).val(0);
-		$('#modal_citations_visite').find('textarea').val("");
-	});
+		$('.spinner_citation').spinner({
+			min:0,
+			max:100,
+			width:'50px',
+			spin : function(){
+				$(this).parents('.well').find('.nb_inconnu').attr('checked', false).prop('checked', false);
+			}
 
+			}).val(0);
+		$('#modal_citations_visite').find('textarea').val("");
+		$('#modal_citations_visite').find('checkbox').attr('checked', false);
+		$('.spinner_nbs').hide();
+		$('.info_effectif').hide();
+	});
+	// décoche effectif inconnu si nb rentré
+	$('.spinner_citation').each(function (){
+		$(this).keypress(function(){
+				$(this).parents('.well').find('.nb_inconnu').attr('checked', false).prop('checked', false);
+		});
+	});
+	// action sur effectif inconnu
+	$('.nb_inconnu').change( function () {
+		var id = $(this).attr('id').substring(3,$(this).attr('id').length-4);
+		if($(this).is( ":checked" )){
+			$("#nb_"+id).val(0);
+			$("#nbs_"+id).val(0);
+			$("#nbs_"+id).hide();
+			$(".nbs_"+id+"_m").hide();
+			$("#nbs_"+id+"_ind").attr('checked', false).prop('checked', false);
+
+		}
+	});
+	// action sur selection fourchettes
+	$('.nbs_ind').change( function (){
+		var id = $(this).attr('id').substring(0,$(this).attr('id').length-4);
+		if($(this).is( ":checked" )){
+			$("#"+id).show();
+			$("."+id+"_m").show();
+			$("#nb_"+id.substring(4,$(this).attr('id').length)+"_ind").attr('checked', false).prop('checked', false);
+		}
+		else {
+			$("#"+id).hide();
+			$("."+id+"_m").hide();
+		}
+	});
 	// remise à zéro du formulaire nouvelle visite
 	$('#modal_nouvelle_visite').on('show.bs.modal', function (e) {
 		$('.spinner').val(0);
@@ -665,7 +707,9 @@ function init_carte_nids(env){
 	// initialisation du formulaire des citations
 	$('#modal_citations_visite').on('show.bs.modal', function (e) {
 		$('.spinner_citation').spinner({min:0,max:100});
+		$('#modal_citations_visite').find('checkbox').attr('checked', false);		
 	});
+
 	// affiche les citations
 	// remise à zéro du formulaire nouvelle visite
 	$('#modal_nouvelle_visite').on('show.bs.modal', function (e) {

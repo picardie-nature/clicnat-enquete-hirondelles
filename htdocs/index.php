@@ -25,7 +25,12 @@ if (!defined('CLICNAT_HIRONDELLE_TAG'))
 	define('CLICNAT_HIRONDELLE_TAG', 629);
 if (!defined('CLICNAT_HIRONDELLE_ID_TAG_OCCUPANT'))
 	define('CLICNAT_HIRONDELLE_ID_TAG_OCCUPANT', 630);
-
+if (!defined('CLICNAT_HIRONDELLE_ID_ESPECE_RUSTIQUE'))
+	define('CLICNAT_HIRONDELLE_ID_ESPECE_RUSTIQUE', 725);
+if (!defined('CLICNAT_HIRONDELLE_ID_ESPECE_FENETRE'))
+	define('CLICNAT_HIRONDELLE_ID_ESPECE_FENETRE', 387);
+if (!defined('CLICNAT_HIRONDELLE_ID_ESPECE_RIVIERE'))
+	define('CLICNAT_HIRONDELLE_ID_ESPECE_RIVIERE', 815);
 
 require_once(SMARTY_DIR.'Smarty.class.php');
 require_once(OBS_DIR.'element.php');
@@ -113,9 +118,9 @@ class Hirondelles extends clicnat_smarty {
 				"oeuf" => "P"
 			];
 			$especes = [
-				"fenetre" => 387,
-				"rustique" => 725,
-				"rivage" => 815
+				"fenetre" => CLICNAT_HIRONDELLE_ID_ESPECE_FENETRE,
+				"rustique" => CLICNAT_HIRONDELLE_ID_ESPECE_RUSTIQUE,
+				"rivage" => CLICNAT_HIRONDELLE_ID_ESPECE_RIVIERE
 			];
 			foreach ($especes as $e_champ => $id_espece) {
 				foreach ($ages as $a_champ => $age_clicnat) {
@@ -135,7 +140,13 @@ class Hirondelles extends clicnat_smarty {
 							bobs_element::cls($_POST["commentaire_{$a_champ}_{$e_champ}"]);
 							$citation->ajoute_commentaire("info",  $_SESSION['id_utilisateur'],htmlentities($_POST["commentaire_{$a_champ}_{$e_champ}"],ENT_COMPAT,'UTF-8'), true);
 						}
-						$citation->set_effectif($nb);
+						if ( (int)$_POST["nbs_{$a_champ}_{$e_champ}"] > -1 &&  (int)$_POST["nbs_{$a_champ}_{$e_champ}"] != $nb ){
+							bobs_element::cli($_POST["nbs_{$a_champ}_{$e_champ}"]);
+							$eff_min = min($nb,$_POST["nbs_{$a_champ}_{$e_champ}"]);
+							$eff_max = max($nb,$_POST["nbs_{$a_champ}_{$e_champ}"]);
+							$citation->set_effectif_min_max($eff_min, $eff_max);
+						}
+						else $citation->set_effectif($nb);
 						$citation->ajoute_tag(CLICNAT_HIRONDELLE_TAG, $visite->id_visite_nid, "visite_espace_hirondelle.id_visite");
 					}
 				}
@@ -199,37 +210,37 @@ class Hirondelles extends clicnat_smarty {
 				switch ($key){
 				case 'n_nid_vide_r' :
 					if( $value > 0){
-						$espece = 725;
+						$espece = CLICNAT_HIRONDELLE_ID_ESPECE_RUSTIQUE;
 						$effectif = 0;
 					}
 					break;
 				case 'n_nid_vide_ri' :
 					if ( $value > 0 ){
-						$espece = 815;
+						$espece = CLICNAT_HIRONDELLE_ID_ESPECE_RIVIERE;
 						$effectif = 0;
 					}
 					break;
 				case 'n_nid_vide_f' :
 					if ( $value > 0){
-						$espece = 387;
+						$espece = CLICNAT_HIRONDELLE_ID_ESPECE_FENETRE;
 						$effectif = 0;
 					}
 					break;
 				case 'n_nid_detruit_r' :
 					if( $value > 0){
-						$espece = 725;
+						$espece = CLICNAT_HIRONDELLE_ID_ESPECE_RUSTIQUE;
 						$effectif = -1;
 					}
 					break;
 				case 'n_nid_detruit_ri' :
 					if ( $value > 0){
-						$espece = 815;
+						$espece = CLICNAT_HIRONDELLE_ID_ESPECE_RIVIERE;
 						$effectif = -1;
 					}
 					break;
 				case 'n_nid_detruit_f' :
 					if ( $value > 0){
-						$espece = 387;
+						$espece = CLICNAT_HIRONDELLE_ID_ESPECE_FENETRE;
 						$effectif = -1;
 					}
 					break;
