@@ -34,7 +34,7 @@
 				<div class="container-fluid" style="text-align:justify;">
 					<p><b>Merci, vos observations sont bien enregistrées.</b></p>
 					<p>Retrouvez l'historique complet en cliquant à nouveau sur ce point.</p>
-					<p>Nous avons surtout besoin de vos observations aux moments clefs de la vie de la colonnie : <em>arrivée et départ des oiseaux, naissances et envol des jeunes...</em></p>
+					<p>Nous avons surtout besoin de vos observations aux moments clefs de la vie de la colonie : <em>arrivée et départ des oiseaux, naissances et envol des jeunes...</em></p>
 				</div>
 			</div>
 			<div class="modal-footer">
