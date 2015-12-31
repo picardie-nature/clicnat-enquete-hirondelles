@@ -97,10 +97,9 @@
 		<p>Une, puis deux, puis trois observations transmises... : c'est <b>grâce à vous qu'il est possible de réaliser cette carte</b> : elle évolue au fur et à mesure des informations envoyées. N'hésitez pas à la consulter régulièrement.</p>
 		</div>
 		<div class="detail" id="dt_carte">
-		<p>Si vous connaissez un nid qui n'est pas indiqué, nous vous invitons à le signaler : pour cela aller vers « <a href="?t=carte_nids" alt="Trasmettez vos données">Partagez et suivez vos observations</a> ».</p>
+			<p>Si vous connaissez un nid qui n'est pas indiqué, nous vous invitons à le signaler : pour cela aller vers « <a href="?t=carte_nids" alt="Trasmettez vos données">Partagez et suivez vos observations</a> ».</p>
 		</div>
 		<a href="#dt_carte" class="apercu_btn btn btn-success glyphicon glyphicon-plus"></a>
-
 		</div>
 	</div>
 	<div class="row">

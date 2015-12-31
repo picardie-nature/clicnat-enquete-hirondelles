@@ -441,6 +441,7 @@ class Hirondelles extends clicnat_smarty {
 		$selection->drop();
 		return $stats;
 	}
+	
 	public function display() {
 		global $start_time;
 		session_start();
@@ -469,12 +470,11 @@ class Hirondelles extends clicnat_smarty {
 			else
 				$this->assign('utl', false);
 			//test sur le navigateur
-				if (ereg("MSIE 6.0", $_SERVER["HTTP_USER_AGENT"]) || ereg("MSIE 7.0", $_SERVER["HTTP_USER_AGENT"]) || ereg("MSIE 8.0", $_SERVER["HTTP_USER_AGENT"]) ) //pour détecter si le navigateur est IE6
-				{
+			if (ereg("MSIE 6.0", $_SERVER["HTTP_USER_AGENT"]) || ereg("MSIE 7.0", $_SERVER["HTTP_USER_AGENT"]) || ereg("MSIE 8.0", $_SERVER["HTTP_USER_AGENT"]) ) {//pour détecter si le navigateur est IE6
 					$this->assign("ie_nav", true );
 					$this->ajoute_alerte('warning','Votre navigateur est obsolète il se peut que certaines informations et/ou fonctionnalités n\' apparaissent ou ne fonctionnent pas: Internet Explorer 8 fin de support le 12/01/2016, Internet Explorer 7 fin de support le 13/07/2010, Internet Explorer 6 fin de support le 13/04/2010.');
 					
-				}
+			}
 			$this->$before_func();
 		} else {
 			header("HTTP/1.0 404 Not Found");
