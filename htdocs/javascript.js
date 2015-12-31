@@ -391,7 +391,7 @@ function init_accueil(env) {
 			method: 'POST',
 			data: $(this).serialize(),
 			error: function (xhr,text,error) {
-				$('#vue_progression_login').html(message.prog_login_err+text);
+				$('#vue_progression_login').html(messages.prog_login_err+text);
 				return;
 			},
 			success: function (data,text,xhr) {
