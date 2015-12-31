@@ -293,6 +293,9 @@ class Hirondelles extends clicnat_smarty {
 	public function before_choix_colonie() {
 	}
 
+	public function before_carte() {
+	}
+
 	public function display() {
 		global $start_time;
 
@@ -305,7 +308,7 @@ class Hirondelles extends clicnat_smarty {
 		$this->assign('url_statique', URL_STATIQUE);
 		$before_func = 'before_'.$this->template();
 		if (method_exists($this, $before_func)) {
-			if (!in_array($this->template(), ['accueil','creer_compte','inscription','login'])) {
+			if (!in_array($this->template(), ['accueil','creer_compte','inscription','login','carte'])) {
 				if ($_SESSION['id_utilisateur'] == false) {
 					throw new Exception('vous devez être identifié');
 				}

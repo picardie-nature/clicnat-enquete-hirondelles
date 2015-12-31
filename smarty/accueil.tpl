@@ -70,7 +70,7 @@
 	<div class="row">
 		<div class="col-md-8 text-center"></div>
 		<div class="col-md-4 text-center boite-accueil fond-blanc-60p">
-			<a class="btn btn-primary btn-lg">La carte des nids</a>
+			<a class="btn btn-primary btn-lg" href="?t=carte">La carte des nids</a>
 			<p>Découvrir où se trouve les autre nids d'hirondelles référencés</p>
 		</div>
 	</div>

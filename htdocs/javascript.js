@@ -29,6 +29,41 @@ var gbl_nouveau = {
 	coordonnees_dernier_click: undefined
 }
 
+var gbl_carte = {
+	map: undefined,
+	colonies: undefined
+}
+
+function init_carte(env) {
+	var projection = ol.proj.get('EPSG:3857');
+	var layers = [
+		new ol.layer.Tile({
+			source: new ol.source.TileWMS({
+				attributions: [new ol.Attribution({html:"Fond de carte &copy; OpenStreetMap et ses contributeurs"})],
+				url: 'http://gpic.web-fr.org/mapproxy/service',
+				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
+			})
+		}),
+		//gbl_carte.colonies
+	];
+	gbl_carte.map = new ol.Map({
+		controls: ol.control.defaults().extend([
+			new ol.control.ScaleLine({
+				units: 'metric'
+			}),
+			new ol.control.Attribution(),
+			new ol.control.Rotate()
+		]),
+		layers: layers,
+		target: 'map',
+		view: new ol.View({
+			projection: projection,
+			center: ol.proj.transform([2.80151, 49.69606], 'EPSG:4326', 'EPSG:3857'),
+			zoom: 8
+		})
+	});
+}
+
 function init_choix_colonie(env) {
 	var projection = ol.proj.get('EPSG:3857');
 	gbl_nouveau.commune = new ol.layer.Vector({
