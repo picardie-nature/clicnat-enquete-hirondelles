@@ -459,7 +459,7 @@ class Hirondelles extends clicnat_smarty {
 		$before_func = 'before_'.$this->template();
 
 		if (method_exists($this, $before_func)) {
-			if (!in_array($this->template(), ['accueil','creer_compte','inscription','login','carte_nids','geojson_points','colonie_details'])) {
+			if (!in_array($this->template(), ['accueil','creer_compte','inscription','login','carte_nids','geojson_points','colonie_details','autocomplete_commune','commune_geojson'])) {
 				if (!$_SESSION['id_utilisateur']){
 					$this->redirect("?t=accueil&acces=false");
 					$this->ajoute_alerte('danger','Vous devez vous connecter por accéder à cette partie');
