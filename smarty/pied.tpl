@@ -28,9 +28,11 @@
 		<div class="col-sm-5 logos">
 		<div class="pull-right">
 			<div class="text-center">
+				<div style="float:left; width:200px; font-size: 12px;">Les actions de Picardie Nature sont cofinancées par le FEDER dans le cadre du programme opérationnel FEDER-FSE pour la Picardie.</div>
 				<a href="http://www.europa.eu" target="_blank" title="Union européenne"><div id="logo_europe" class="hoverscroll"></div></a>
 			</div>
 			<div class="text-center">
+
 				<a href="http://www.picardie-europe.eu" target="_blank" title="Union européenne"><div id="logo_europe_eng" class="hoverscroll"></div></a>
 			</div>
 			<div class="text-center">
