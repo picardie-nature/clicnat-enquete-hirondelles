@@ -43,8 +43,7 @@ function init_carte(env) {
 				url: 'http://gpic.web-fr.org/mapproxy/service',
 				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
 			})
-		}),
-		//gbl_carte.colonies
+		})
 	];
 	gbl_carte.map = new ol.Map({
 		controls: ol.control.defaults().extend([
@@ -262,18 +261,15 @@ function init_choix_colonie(env) {
 			url: '?t=geojson_points',
 			beforeSend:  function (xhr,settings) {$('#modal_chargement').modal({backdrop: 'static'}).show();},
 			success: function (data,textStatus,xhr) {
-				var src = new ol.source.GeoJSON({
-					defaultProjection: 'EPSG:4326',
-					projection: 'EPSG:3857',
-					object: data
+				var fmt_geojson = new ol.format.GeoJSON();
+				var features = fmt_geojson.readFeatures(data, {
+					dataProjection: 'EPSG:4326',
+					featureProjection: 'EPSG:3857'
 				});
-				//alert(data.features);
-				//alert(src.getFeatures());
 				gbl_nouveau.colonies.getSource().getSource().clear();
-				gbl_nouveau.colonies.getSource().getSource().addFeatures(src.getFeatures());
+				gbl_nouveau.colonies.getSource().getSource().addFeatures(features);
 				$('#modal_chargement').modal('hide');
 			}
-
 		});
 	}
 
@@ -285,13 +281,15 @@ function init_choix_colonie(env) {
 			$.ajax({
 				url: '?t=commune_geojson&id='+ui.item.value,
 				success: function (data,textStatus,xhr) {
-					var src = new ol.source.GeoJSON({
-						defaultProjection: 'EPSG:4326',
-						projection: 'EPSG:3857',
-						object:data
+					var fmt_geojson = new ol.format.GeoJSON();
+					var features = fmt_geojson.readFeatures(data, {
+						dataProjection: 'EPSG:4326',
+						featureProjection: 'EPSG:3857'
 					});
+
 					gbl_nouveau.commune.getSource().clear();
-					gbl_nouveau.commune.getSource().addFeatures(src.getFeatures());
+					gbl_nouveau.commune.getSource().addFeatures(features);
+
 					var features = gbl_nouveau.commune.getSource().getFeatures();
 					// recentrer la carte
 					for (var i=0; i<features.length; i++) {
@@ -309,7 +307,7 @@ function init_choix_colonie(env) {
 			url: $(this).attr('action'),
 			beforeSend:  function (xhr,settings) {
 				$('#modal_chargement').modal({backdrop: 'static'}).show();
-			$('#modal_nouveau_point').modal('hide');
+				$('#modal_nouveau_point').modal('hide');
 			},
 			method: 'POST',
 			data: $(this).serialize(),
@@ -512,7 +510,7 @@ function init_choix_colonie(env) {
 }
 
 // initialisation de la page carte des nids
-function init_carte_nids(env){
+function init_carte_nids(env) {
 	var projection = ol.proj.get('EPSG:3857');
 	var styles = [ 'Road', 'Aerial', 'AerialWithLabels', 'collinsBart', 'ordnanceSurvey' ];
 	var bing = new ol.layer.Tile({ 
@@ -580,7 +578,7 @@ function init_carte_nids(env){
 			return [s];
 		}
 	});
-	var layers = [
+	/*
 //		new ol.layer.Tile({
 //			source: new ol.source.TileWMS({
 //				attributions: [new ol.Attribution({html:"Fond de carte &copy; OpenStreetMap et ses contributeurs"})],
@@ -588,6 +586,8 @@ function init_carte_nids(env){
 //				params: {LAYERS:'osm_geopicardie_bright',VERSION:'1.1.1'}
 //			})
 //		}),
+//		*/
+	var layers = [
 		bing,
 		gbl_nouveau.commune,
 		gbl_nouveau.colonies
@@ -607,7 +607,8 @@ function init_carte_nids(env){
 			center: ol.proj.transform([2.80151, 49.69606], 'EPSG:4326', 'EPSG:3857'),
 			zoom: 8
 		})
-	});	var select = new ol.interaction.Select({
+	});	
+	var select = new ol.interaction.Select({
 		layers: [gbl_nouveau.colonies],
 		style: function (feature,resolution) {
 			return [gbl_nouveau.colonies_style(feature)];
@@ -615,6 +616,7 @@ function init_carte_nids(env){
 	});
 
 	gbl_nouveau.map.addInteraction(select);
+
 	select.on('select', function (evt) {
 		var nselect = evt.target.getFeatures().getLength();
 		var ncluster = 0;
@@ -699,15 +701,13 @@ function init_carte_nids(env){
 			url: '?t=geojson_points',
 			beforeSend:  function (xhr,settings) {$('#modal_chargement').modal({backdrop: 'static'}).show();},
 			success: function (data,textStatus,xhr) {
-				var src = new ol.source.GeoJSON({
-					defaultProjection: 'EPSG:4326',
-					projection: 'EPSG:3857',
-					object: data
+				var fmt_geojson = new ol.format.GeoJSON();
+				var features = fmt_geojson.readFeatures(data, {
+					dataProjection: 'EPSG:4326',
+					featureProjection: 'EPSG:3857'
 				});
-			//	alert(data);
-				//$('.count_colonies').append(data.features.length);
 				gbl_nouveau.colonies.getSource().getSource().clear();
-				gbl_nouveau.colonies.getSource().getSource().addFeatures(src.getFeatures());
+				gbl_nouveau.colonies.getSource().getSource().addFeatures(features);
 				$('#modal_chargement').modal('hide');
 			}
 		});
@@ -721,14 +721,14 @@ function init_carte_nids(env){
 			$.ajax({
 				url: '?t=commune_geojson&id='+ui.item.value,
 				success: function (data,textStatus,xhr) {
-					var src = new ol.source.GeoJSON({
-						defaultProjection: 'EPSG:4326',
-						projection: 'EPSG:3857',
-						object:data
+					var fmt_geojson = new ol.format.GeoJSON();
+					var features = fmt_geojson.readFeatures(data, {
+						dataProjection: 'EPSG:4326',
+						featureProjection: 'EPSG:3857'
 					});
 					gbl_nouveau.commune.getSource().clear();
-					gbl_nouveau.commune.getSource().addFeatures(src.getFeatures());
-					var features = gbl_nouveau.commune.getSource().getFeatures();
+					gbl_nouveau.commune.getSource().addFeatures(features);
+					//var features = gbl_nouveau.commune.getSource().getFeatures();
 					// recentrer la carte
 					for (var i=0; i<features.length; i++) {
 						gbl_nouveau.map.getView().fitExtent(features[i].getGeometry().getExtent(), gbl_nouveau.map.getSize());
